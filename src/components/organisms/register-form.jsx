@@ -66,10 +66,10 @@ export function RegisterForm() {
                 <FormItem>
                   <FormLabel className="text-blue-900 font-medium">Username</FormLabel>
                   <FormControl>
-                    <Input 
-                      placeholder="johndoe" 
-                      className="border-blue-200 focus-visible:ring-blue-500 bg-white" 
-                      {...field} 
+                    <Input
+                      placeholder="johndoe"
+                      className="border-blue-200 focus-visible:ring-blue-500 bg-white"
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
@@ -83,10 +83,10 @@ export function RegisterForm() {
                 <FormItem>
                   <FormLabel className="text-blue-900 font-medium">Email</FormLabel>
                   <FormControl>
-                    <Input 
-                      placeholder="user@example.com" 
-                      className="border-blue-200 focus-visible:ring-blue-500 bg-white" 
-                      {...field} 
+                    <Input
+                      placeholder="user@example.com"
+                      className="border-blue-200 focus-visible:ring-blue-500 bg-white"
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
@@ -100,11 +100,11 @@ export function RegisterForm() {
                 <FormItem>
                   <FormLabel className="text-blue-900 font-medium">Password</FormLabel>
                   <FormControl>
-                    <Input 
-                      type="password" 
-                      placeholder="******" 
-                      className="border-blue-200 focus-visible:ring-blue-500 bg-white" 
-                      {...field} 
+                    <Input
+                      type="password"
+                      placeholder="******"
+                      className="border-blue-200 focus-visible:ring-blue-500 bg-white"
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
@@ -118,20 +118,20 @@ export function RegisterForm() {
                 <FormItem>
                   <FormLabel className="text-blue-900 font-medium">Konfirmasi Password</FormLabel>
                   <FormControl>
-                    <Input 
-                      type="password" 
-                      placeholder="******" 
-                      className="border-blue-200 focus-visible:ring-blue-500 bg-white" 
-                      {...field} 
+                    <Input
+                      type="password"
+                      placeholder="******"
+                      className="border-blue-200 focus-visible:ring-blue-500 bg-white"
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
-            <Button 
-              type="submit" 
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-md shadow-blue-600/20" 
+            <Button
+              type="submit"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-md shadow-blue-600/20"
               disabled={isLoading}
             >
               {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
@@ -143,7 +143,7 @@ export function RegisterForm() {
       <CardFooter className="flex flex-col space-y-2 text-center pb-6">
         <div className="text-sm text-blue-900">
           Sudah punya akun?{" "}
-          <Link to="/login" className="text-blue-600 hover:text-blue-800 hover:underline font-medium">
+          <Link to="/" className="text-blue-600 hover:text-blue-800 hover:underline font-medium">
             Masuk
           </Link>
         </div>
