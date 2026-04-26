@@ -1,5 +1,23 @@
-import { Link, useLocation } from "react-router-dom"
-import { Home, LayoutDashboard, Settings, Users } from "lucide-react"
+import { Link, useLocation, Outlet, useNavigate } from "react-router-dom"
+import { LayoutDashboard, ChartNoAxesCombined, Users, LogOut } from "lucide-react"
+
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogTrigger,
+} from "../ui/alert-dialog"
+
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "../ui/card"
+
+import { Button } from "../ui/button"
 
 import {
   Sidebar,
@@ -7,29 +25,44 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
+  SidebarFooter,
 } from "../ui/sidebar"
 
 export function AppSidebar() {
   const location = useLocation()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    // Lakukan pembersihan sesi di sini jika perlu
+    navigate("/")
+  }
 
   const items = [
     { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
+    { title: "Logs", url: "/dashboard/logs", icon: ChartNoAxesCombined },
   ]
 
   const settings = [
-    { title: "Users", url: "/users", icon: Users },
+    { title: "Users", url: "/dashboard/users", icon: Users },
   ]
 
   return (
     <Sidebar>
+      <SidebarHeader>
+        <div className="flex flex-col items-center gap-1.5">
+          <img src="/images/LOGO.png" alt="dashboard_logo" className="w-full h-28 aspect-square object-contain" />
+          <span className="text-sm font-bold">Smart Farm Admin</span>
+        </div>
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Smart Farm Admin</SidebarGroupLabel>
+          <SidebarGroupLabel>Main</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => {
@@ -69,6 +102,36 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            <SidebarMenuButton className="text-red-500 hover:text-red-600 hover:bg-red-50 font-medium">
+              <LogOut className="mr-2 h-4 w-4" />
+              <span>Logout</span>
+            </SidebarMenuButton>
+          </AlertDialogTrigger>
+          <AlertDialogContent className="p-0 border-none bg-transparent shadow-none w-full max-w-md">
+            <Card>
+              <CardHeader>
+                <CardTitle>Konfirmasi Logout</CardTitle>
+              </CardHeader>
+              <CardContent>
+                Apakah Anda yakin ingin keluar dari halaman admin? Sesi Anda akan diakhiri.
+              </CardContent>
+              <CardFooter className="flex justify-end space-x-2">
+                <AlertDialogCancel asChild>
+                  <Button variant="outline">Batal</Button>
+                </AlertDialogCancel>
+                <AlertDialogAction asChild>
+                  <Button onClick={handleLogout} className="bg-red-600 hover:bg-red-700">
+                    Keluar
+                  </Button>
+                </AlertDialogAction>
+              </CardFooter>
+            </Card>
+          </AlertDialogContent>
+        </AlertDialog>
+      </SidebarFooter>
     </Sidebar>
   )
 }
@@ -82,7 +145,7 @@ export function DashboardLayout({ children }) {
           <SidebarTrigger />
         </header>
         <main className="flex-1 overflow-auto">
-          {children}
+          {children || <Outlet />}
         </main>
       </div>
     </SidebarProvider>

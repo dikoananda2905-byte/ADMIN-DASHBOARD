@@ -1,9 +1,9 @@
 import { Link, useParams } from "react-router-dom"
 import { ChevronLeft } from "lucide-react"
 
-import { Button } from "../components/ui/button"
-import { Input } from "../components/ui/input"
-import { Card, CardHeader, CardTitle, CardContent } from "../components/ui/card"
+import { Button } from "../../components/ui/button"
+import { Input } from "../../components/ui/input"
+import { Card, CardHeader, CardTitle, CardContent } from "../../components/ui/card"
 
 export default function UserViewPage() {
   const { id } = useParams()
