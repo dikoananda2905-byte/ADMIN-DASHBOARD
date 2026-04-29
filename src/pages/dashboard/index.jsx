@@ -253,7 +253,7 @@ export default function DashboardPage() {
                 key={`grafana-1-${grafanaTheme}`}
                 src={`http://103.93.160.128:3000/d-solo/adnw6vb/smart-agriculture-capstone?orgId=1&from=1777407337111&to=1777428937111&timezone=browser&refresh=10s&panelId=panel-1&theme=${grafanaTheme}`}
                 width="100%"
-                height="400"
+                height="500"
                 frameBorder="0"
                 title="Grafana - Suhu Udara"
                 sandbox="allow-scripts allow-same-origin"
@@ -275,7 +275,7 @@ export default function DashboardPage() {
                 key={`grafana-2-${grafanaTheme}`}
                 src={`http://103.93.160.128:3000/d-solo/adnw6vb/smart-agriculture-capstone?orgId=1&from=1777407357110&to=1777428957110&timezone=browser&refresh=10s&panelId=panel-2&theme=${grafanaTheme}`}
                 width="100%"
-                height="400"
+                height="500"
                 frameBorder="0"
                 title="Grafana - Kelembapan Udara"
                 sandbox="allow-scripts allow-same-origin"
@@ -297,7 +297,7 @@ export default function DashboardPage() {
                 key={`grafana-3-${grafanaTheme}`}
                 src={`http://103.93.160.128:3000/d-solo/adnw6vb/smart-agriculture-capstone?orgId=1&from=1777407367106&to=1777428967106&timezone=browser&refresh=10s&panelId=panel-3&theme=${grafanaTheme}`}
                 width="100%"
-                height="400"
+                height="500"
                 frameBorder="0"
                 title="Grafana - Intensitas Cahaya"
                 sandbox="allow-scripts allow-same-origin"
@@ -319,7 +319,7 @@ export default function DashboardPage() {
                 key={`grafana-4-${grafanaTheme}`}
                 src={`http://103.93.160.128:3000/d-solo/adnw6vb/smart-agriculture-capstone?orgId=1&from=1777407388255&to=1777428988255&timezone=browser&refresh=10s&panelId=panel-4&theme=${grafanaTheme}`}
                 width="100%"
-                height="400"
+                height="500"
                 frameBorder="0"
                 title="Grafana - Kelembapan Tanah"
                 sandbox="allow-scripts allow-same-origin"
