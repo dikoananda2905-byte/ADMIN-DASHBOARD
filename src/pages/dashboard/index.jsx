@@ -242,12 +242,6 @@ export default function DashboardPage() {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2">
           {/* Suhu Udara */}
           <div className="overflow-hidden rounded-lg border border-border bg-background shadow-sm hover:shadow-md transition-shadow">
-            <div className="p-3 border-b border-border bg-muted/50">
-              <h3 className="text-sm font-semibold flex items-center gap-2">
-                {/* <Thermometer className="w-4 h-4 text-orange-500" />
-                Suhu Udara */}
-              </h3>
-            </div>
             <div className="flex items-center justify-center w-full overflow-hidden">
               <iframe
                 key={`grafana-1-${grafanaTheme}`}
@@ -264,12 +258,7 @@ export default function DashboardPage() {
 
           {/* Kelembapan Udara */}
           <div className="overflow-hidden rounded-lg border border-border bg-background shadow-sm hover:shadow-md transition-shadow">
-            <div className="p-3 border-b border-border bg-muted/50">
-              <h3 className="text-sm font-semibold flex items-center gap-2">
-                {/* <Cloud className="w-4 h-4 text-blue-500" />
-                Kelembapan Udara */}
-              </h3>
-            </div>
+           
             <div className="flex items-center justify-center w-full overflow-hidden">
               <iframe
                 key={`grafana-2-${grafanaTheme}`}
@@ -286,12 +275,7 @@ export default function DashboardPage() {
 
           {/* Intensitas Cahaya */}
           <div className="overflow-hidden rounded-lg border border-border bg-background shadow-sm hover:shadow-md transition-shadow">
-            <div className="p-3 border-b border-border bg-muted/50">
-              <h3 className="text-sm font-semibold flex items-center gap-2">
-                {/* <Sun className="w-4 h-4 text-purple-500" />
-                Intensitas Cahaya */}
-              </h3>
-            </div>
+           
             <div className="flex items-center justify-center w-full overflow-hidden">
               <iframe
                 key={`grafana-3-${grafanaTheme}`}
@@ -308,12 +292,6 @@ export default function DashboardPage() {
 
           {/* Kelembapan Tanah */}
           <div className="overflow-hidden rounded-lg border border-border bg-background shadow-sm hover:shadow-md transition-shadow">
-            <div className="p-3 border-b border-border bg-muted/50">
-              <h3 className="text-sm font-semibold flex items-center gap-2">
-                {/* <Droplets className="w-4 h-4 text-green-500" />
-                Kelembapan Tanah */}
-              </h3>
-            </div>
             <div className="flex items-center justify-center w-full overflow-hidden">
               <iframe
                 key={`grafana-4-${grafanaTheme}`}
