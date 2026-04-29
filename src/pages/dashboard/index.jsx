@@ -232,44 +232,98 @@ export default function DashboardPage() {
       <div className="space-y-3">
         <div className="px-1">
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
-            Trend Analysis
+            Grafana Monitoring
           </h2>
           <p className="text-xs text-muted-foreground mt-1">
             Real-time visualization dari Grafana
           </p>
         </div>
         
-        <div className="space-y-4">
-          {/* Grafana Chart 1 */}
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2">
+          {/* Suhu Udara */}
           <div className="overflow-hidden rounded-lg border border-border bg-background shadow-sm hover:shadow-md transition-shadow">
-            <div
-              className="flex items-center justify-center w-full overflow-hidden bg-muted"
-              style={{ minHeight: "450px" }}
-            >
+            <div className="p-3 border-b border-border bg-muted/50">
+              <h3 className="text-sm font-semibold flex items-center gap-2">
+                <Thermometer className="w-4 h-4 text-orange-500" />
+                Suhu Udara
+              </h3>
+            </div>
+            <div className="flex items-center justify-center w-full overflow-hidden">
               <iframe
                 key={`grafana-1-${grafanaTheme}`}
-                src={`http://103.93.160.128:3000/d-solo/adnw6vb/smart-agriculture-capstone?orgId=1&panelId=1&from=now-30m&to=now&theme=${grafanaTheme}`}
-                title="Grafana Chart 1"
-                className="w-full border-0"
-                style={{ height: "450px" }}
+                src={`http://103.93.160.128:3000/d-solo/adnw6vb/smart-agriculture-capstone?orgId=1&from=1777407337111&to=1777428937111&timezone=browser&refresh=10s&panelId=panel-1&theme=${grafanaTheme}`}
+                width="100%"
+                height="400"
+                frameBorder="0"
+                title="Grafana - Suhu Udara"
                 sandbox="allow-scripts allow-same-origin"
+                style={{ minHeight: "200px" }}
               />
             </div>
           </div>
 
-          {/* Grafana Chart 2 */}
+          {/* Kelembapan Udara */}
           <div className="overflow-hidden rounded-lg border border-border bg-background shadow-sm hover:shadow-md transition-shadow">
-            <div
-              className="flex items-center justify-center w-full overflow-hidden bg-muted"
-              style={{ minHeight: "450px" }}
-            >
+            <div className="p-3 border-b border-border bg-muted/50">
+              <h3 className="text-sm font-semibold flex items-center gap-2">
+                <Cloud className="w-4 h-4 text-blue-500" />
+                Kelembapan Udara
+              </h3>
+            </div>
+            <div className="flex items-center justify-center w-full overflow-hidden">
               <iframe
                 key={`grafana-2-${grafanaTheme}`}
-                src={`http://103.93.160.128:3000/d-solo/adnw6vb/smart-agriculture-capstone?orgId=1&panelId=2&from=now-30m&to=now&theme=${grafanaTheme}`}
-                title="Grafana Chart 2"
-                className="w-full border-0"
-                style={{ height: "450px" }}
+                src={`http://103.93.160.128:3000/d-solo/adnw6vb/smart-agriculture-capstone?orgId=1&from=1777407357110&to=1777428957110&timezone=browser&refresh=10s&panelId=panel-2&theme=${grafanaTheme}`}
+                width="100%"
+                height="400"
+                frameBorder="0"
+                title="Grafana - Kelembapan Udara"
                 sandbox="allow-scripts allow-same-origin"
+                style={{ minHeight: "200px" }}
+              />
+            </div>
+          </div>
+
+          {/* Intensitas Cahaya */}
+          <div className="overflow-hidden rounded-lg border border-border bg-background shadow-sm hover:shadow-md transition-shadow">
+            <div className="p-3 border-b border-border bg-muted/50">
+              <h3 className="text-sm font-semibold flex items-center gap-2">
+                <Sun className="w-4 h-4 text-purple-500" />
+                Intensitas Cahaya
+              </h3>
+            </div>
+            <div className="flex items-center justify-center w-full overflow-hidden">
+              <iframe
+                key={`grafana-3-${grafanaTheme}`}
+                src={`http://103.93.160.128:3000/d-solo/adnw6vb/smart-agriculture-capstone?orgId=1&from=1777407367106&to=1777428967106&timezone=browser&refresh=10s&panelId=panel-3&theme=${grafanaTheme}`}
+                width="100%"
+                height="400"
+                frameBorder="0"
+                title="Grafana - Intensitas Cahaya"
+                sandbox="allow-scripts allow-same-origin"
+                style={{ minHeight: "200px" }}
+              />
+            </div>
+          </div>
+
+          {/* Kelembapan Tanah */}
+          <div className="overflow-hidden rounded-lg border border-border bg-background shadow-sm hover:shadow-md transition-shadow">
+            <div className="p-3 border-b border-border bg-muted/50">
+              <h3 className="text-sm font-semibold flex items-center gap-2">
+                <Droplets className="w-4 h-4 text-green-500" />
+                Kelembapan Tanah
+              </h3>
+            </div>
+            <div className="flex items-center justify-center w-full overflow-hidden">
+              <iframe
+                key={`grafana-4-${grafanaTheme}`}
+                src={`http://103.93.160.128:3000/d-solo/adnw6vb/smart-agriculture-capstone?orgId=1&from=1777407388255&to=1777428988255&timezone=browser&refresh=10s&panelId=panel-4&theme=${grafanaTheme}`}
+                width="100%"
+                height="400"
+                frameBorder="0"
+                title="Grafana - Kelembapan Tanah"
+                sandbox="allow-scripts allow-same-origin"
+                style={{ minHeight: "200px" }}
               />
             </div>
           </div>
